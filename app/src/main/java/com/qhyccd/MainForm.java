@@ -256,6 +256,10 @@ public class MainForm extends AppCompatActivity {
             bmp1.recycle();
             bmp1 = null;
         }
+        if(cdt != null){
+            cdt.cancel();
+            cdt = null;
+        }
     }
 
     static {
