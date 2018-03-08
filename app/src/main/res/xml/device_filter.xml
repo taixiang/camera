@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+
+       // vid = 0x1618 pid = 0x920 
+        <usb-device vendor-id="5656" product-id="2336"  />
+       // vid = 0x1618 pid = 0x8310 
+        <usb-device vendor-id="5656" product-id="33552"  />
+       // vid = 0x1618 pid = 0x6740 
+        <usb-device vendor-id="5656" product-id="26432"  />
+       // vid = 0x1618 pid = 0x6940 
+        <usb-device vendor-id="5656" product-id="26944"  />
+       // vid = 0x1618 pid = 0x6004 
+        <usb-device vendor-id="5656" product-id="24580"  />
+       // vid = 0x1618 pid = 0x1000 
+        <usb-device vendor-id="5656" product-id="4096"  />
+       // vid = 0x1618 pid = 0x1200 
+        <usb-device vendor-id="5656" product-id="4608"  />
+       // vid = 0x1618 pid = 0x8300 
+        <usb-device vendor-id="5656" product-id="33536"  />
+       // vid = 0x1618 pid = 0x6002 
+        <usb-device vendor-id="5656" product-id="24578"  />
+       // vid = 0x1618 pid = 0x1110 
+        <usb-device vendor-id="5656" product-id="4368"  />
+       // vid = 0x1618 pid = 0x8140 
+        <usb-device vendor-id="5656" product-id="33088"  />
+       // vid = 0x1618 pid = 0x2850 
+        <usb-device vendor-id="5656" product-id="10320"  />
+       // vid = 0x1618 pid = 0x259 
+        <usb-device vendor-id="5656" product-id="601"  />
+       // vid = 0x1618 pid = 0x6000 
+        <usb-device vendor-id="5656" product-id="24576"  />
+       // vid = 0x1618 pid = 0x930 
+        <usb-device vendor-id="5656" product-id="2352"  />
+       // vid = 0x1618 pid = 0x1610 
+        <usb-device vendor-id="5656" product-id="5648"  />
+       // vid = 0x16c0 pid = 0x901 
+        <usb-device vendor-id="5824" product-id="2305"  />
+       // vid = 0x1618 pid = 0x4022 
+        <usb-device vendor-id="5656" product-id="16418"  />
+       // vid = 0x16c0 pid = 0x2970 
+        <usb-device vendor-id="5824" product-id="10608"  />
+       // vid = 0x1618 pid = 0xb618 
+        <usb-device vendor-id="5656" product-id="46616"  />
+       // vid = 0x1618 pid = 0x1500 
+        <usb-device vendor-id="5656" product-id="5376"  />
+       // vid = 0x1618 pid = 0x1650 
+        <usb-device vendor-id="5656" product-id="5712"  />
+       // vid = 0x1618 pid = 0x8320 
+        <usb-device vendor-id="5656" product-id="33568"  />
+       // vid = 0x1618 pid = 0x1620 
+        <usb-device vendor-id="5656" product-id="5664"  />
+       // vid = 0x1618 pid = 0x1670 
+        <usb-device vendor-id="5656" product-id="5744"  />
+       // vid = 0x1618 pid = 0x8302 
+        <usb-device vendor-id="5656" product-id="33538"  />
+       // vid = 0x1618 pid = 0x1630 
+        <usb-device vendor-id="5656" product-id="5680"  />
+       // vid = 0x1618 pid = 0x2950 
+        <usb-device vendor-id="5656" product-id="10576"  />
+       // vid = 0x4b4 pid = 0xf1 
+        <usb-device vendor-id="1204" product-id="241"  />
+       // vid = 0x1618 pid = 0x901 
+        <usb-device vendor-id="5656" product-id="2305"  />
+       // vid = 0x1618 pid = 0x940 
+        <usb-device vendor-id="5656" product-id="2368"  />
+       // vid = 0x1618 pid = 0x174 
+        <usb-device vendor-id="5656" product-id="372"  />
+       // vid = 0x1618 pid = 0x8322 
+        <usb-device vendor-id="5656" product-id="33570"  />
+       // vid = 0x1618 pid = 0x178 
+        <usb-device vendor-id="5656" product-id="376"  />
+       // vid = 0x1618 pid = 0x1622 
+        <usb-device vendor-id="5656" product-id="5666"  />
+       // vid = 0x1618 pid = 0x236 
+        <usb-device vendor-id="5656" product-id="566"  />
+       // vid = 0x1618 pid = 0x185 
+        <usb-device vendor-id="5656" product-id="389"  />
+       // vid = 0x1618 pid = 0x6952 
+        <usb-device vendor-id="5656" product-id="26962"  />
+       // vid = 0x4b4 pid = 0x8613 
+        <usb-device vendor-id="1204" product-id="34323"  />
+       // vid = 0x1618 pid = 0x1600 
+        <usb-device vendor-id="5656" product-id="5632"  />
+       // vid = 0x1618 pid = 0x1632 
+        <usb-device vendor-id="5656" product-id="5682"  />
+       // vid = 0x1618 pid = 0xc400 
+        <usb-device vendor-id="5656" product-id="50176"  />
+       // vid = 0x1618 pid = 0x224 
+        <usb-device vendor-id="5656" product-id="548"  />
+       // vid = 0x1618 pid = 0xc174 
+        <usb-device vendor-id="5656" product-id="49524"  />
+       // vid = 0x1618 pid = 0x290 
+        <usb-device vendor-id="5656" product-id="656"  />
+       // vid = 0x1618 pid = 0xc178 
+        <usb-device vendor-id="5656" product-id="49528"  />
+       // vid = 0x1618 pid = 0xc224 
+        <usb-device vendor-id="5656" product-id="49700"  />
+       // vid = 0x1618 pid = 0xc290 
+        <usb-device vendor-id="5656" product-id="49808"  />
+       // vid = 0x1618 pid = 0xc163 
+        <usb-device vendor-id="5656" product-id="49507"  />
+       // vid = 0x1618 pid = 0xc165 
+        <usb-device vendor-id="5656" product-id="49509"  />
+       // vid = 0x1618 pid = 0xc367 
+        <usb-device vendor-id="5656" product-id="50023"  />
+       // vid = 0x1618 pid = 0xc183 
+        <usb-device vendor-id="5656" product-id="49539"  />
+       // vid = 0x4b4 pid = 0x8613 
+        <usb-device vendor-id="1204" product-id="34323"  />
+       // vid = 0x1618 pid = 0xf367 
+        <usb-device vendor-id="5656" product-id="62311"  />
+       // vid = 0x1618 pid = 0xa814 
+        <usb-device vendor-id="5656" product-id="43028"  />
+       // vid = 0x1618 pid = 0x5300 
+        <usb-device vendor-id="5656" product-id="21248"  />
+       // vid = 0x1618 pid = 0x1632 
+        <usb-device vendor-id="5656" product-id="5682"  />
+       // vid = 0x1618 pid = 0xc247 
+        <usb-device vendor-id="5656" product-id="49735"  />
+       // vid = 0x1618 pid = 0xc167 
+        <usb-device vendor-id="5656" product-id="49511"  />
+       // vid = 0x1618 pid = 0xc128 
+        <usb-device vendor-id="5656" product-id="49448"  />
+       // vid = 0x1618 pid = 0x9000 
+        <usb-device vendor-id="5656" product-id="36864"  />
+       // vid = 0x1618 pid = 0x921 
+        <usb-device vendor-id="5656" product-id="2337"  />
+       // vid = 0x1618 pid = 0x8311 
+        <usb-device vendor-id="5656" product-id="33553"  />
+       // vid = 0x1618 pid = 0x6741 
+        <usb-device vendor-id="5656" product-id="26433"  />
+       // vid = 0x1618 pid = 0x6941 
+        <usb-device vendor-id="5656" product-id="26945"  />
+       // vid = 0x1618 pid = 0x6005 
+        <usb-device vendor-id="5656" product-id="24581"  />
+       // vid = 0x1618 pid = 0x1001 
+        <usb-device vendor-id="5656" product-id="4097"  />
+       // vid = 0x1618 pid = 0x1201 
+        <usb-device vendor-id="5656" product-id="4609"  />
+       // vid = 0x1618 pid = 0x8301 
+        <usb-device vendor-id="5656" product-id="33537"  />
+       // vid = 0x1618 pid = 0x6003 
+        <usb-device vendor-id="5656" product-id="24579"  />
+       // vid = 0x1618 pid = 0x1111 
+        <usb-device vendor-id="5656" product-id="4369"  />
+       // vid = 0x1618 pid = 0x8141 
+        <usb-device vendor-id="5656" product-id="33089"  />
+       // vid = 0x1618 pid = 0x2851 
+        <usb-device vendor-id="5656" product-id="10321"  />
+       // vid = 0x1618 pid = 0x25a 
+        <usb-device vendor-id="5656" product-id="602"  />
+       // vid = 0x1618 pid = 0x6001 
+        <usb-device vendor-id="5656" product-id="24577"  />
+       // vid = 0x1618 pid = 0x931 
+        <usb-device vendor-id="5656" product-id="2353"  />
+       // vid = 0x1618 pid = 0x1611 
+        <usb-device vendor-id="5656" product-id="5649"  />
+       // vid = 0x16c0 pid = 0x296d 
+        <usb-device vendor-id="5824" product-id="10605"  />
+       // vid = 0x1618 pid = 0x4023 
+        <usb-device vendor-id="5656" product-id="16419"  />
+       // vid = 0x16c0 pid = 0x2971 
+        <usb-device vendor-id="5824" product-id="10609"  />
+       // vid = 0x1618 pid = 0xa618 
+        <usb-device vendor-id="5656" product-id="42520"  />
+       // vid = 0x1618 pid = 0x1501 
+        <usb-device vendor-id="5656" product-id="5377"  />
+       // vid = 0x1618 pid = 0x1651 
+        <usb-device vendor-id="5656" product-id="5713"  />
+       // vid = 0x1618 pid = 0x8321 
+        <usb-device vendor-id="5656" product-id="33569"  />
+       // vid = 0x1618 pid = 0x1621 
+        <usb-device vendor-id="5656" product-id="5665"  />
+       // vid = 0x1618 pid = 0x1671 
+        <usb-device vendor-id="5656" product-id="5745"  />
+       // vid = 0x1618 pid = 0x8303 
+        <usb-device vendor-id="5656" product-id="33539"  />
+       // vid = 0x1618 pid = 0x1631 
+        <usb-device vendor-id="5656" product-id="5681"  />
+       // vid = 0x1618 pid = 0x2951 
+        <usb-device vendor-id="5656" product-id="10577"  />
+       // vid = 0x4b4 pid = 0xf1 
+        <usb-device vendor-id="1204" product-id="241"  />
+       // vid = 0x1618 pid = 0x296d 
+        <usb-device vendor-id="5656" product-id="10605"  />
+       // vid = 0x1618 pid = 0x941 
+        <usb-device vendor-id="5656" product-id="2369"  />
+       // vid = 0x1618 pid = 0x175 
+        <usb-device vendor-id="5656" product-id="373"  />
+       // vid = 0x1618 pid = 0x8323 
+        <usb-device vendor-id="5656" product-id="33571"  />
+       // vid = 0x1618 pid = 0x179 
+        <usb-device vendor-id="5656" product-id="377"  />
+       // vid = 0x1618 pid = 0x1623 
+        <usb-device vendor-id="5656" product-id="5667"  />
+       // vid = 0x1618 pid = 0x237 
+        <usb-device vendor-id="5656" product-id="567"  />
+       // vid = 0x1618 pid = 0x186 
+        <usb-device vendor-id="5656" product-id="390"  />
+       // vid = 0x1618 pid = 0x6953 
+        <usb-device vendor-id="5656" product-id="26963"  />
+       // vid = 0x4b4 pid = 0x8614 
+        <usb-device vendor-id="1204" product-id="34324"  />
+       // vid = 0x1618 pid = 0x1601 
+        <usb-device vendor-id="5656" product-id="5633"  />
+       // vid = 0x1618 pid = 0x1633 
+        <usb-device vendor-id="5656" product-id="5683"  />
+       // vid = 0x1618 pid = 0xc401 
+        <usb-device vendor-id="5656" product-id="50177"  />
+       // vid = 0x1618 pid = 0x225 
+        <usb-device vendor-id="5656" product-id="549"  />
+       // vid = 0x1618 pid = 0xc175 
+        <usb-device vendor-id="5656" product-id="49525"  />
+       // vid = 0x1618 pid = 0x291 
+        <usb-device vendor-id="5656" product-id="657"  />
+       // vid = 0x1618 pid = 0xc179 
+        <usb-device vendor-id="5656" product-id="49529"  />
+       // vid = 0x1618 pid = 0xc225 
+        <usb-device vendor-id="5656" product-id="49701"  />
+       // vid = 0x1618 pid = 0xc291 
+        <usb-device vendor-id="5656" product-id="49809"  />
+       // vid = 0x1618 pid = 0xc164 
+        <usb-device vendor-id="5656" product-id="49508"  />
+       // vid = 0x1618 pid = 0xc166 
+        <usb-device vendor-id="5656" product-id="49510"  />
+       // vid = 0x1618 pid = 0xc368 
+        <usb-device vendor-id="5656" product-id="50024"  />
+       // vid = 0x1618 pid = 0xc184 
+        <usb-device vendor-id="5656" product-id="49540"  />
+       // vid = 0x4b4 pid = 0x8614 
+        <usb-device vendor-id="1204" product-id="34324"  />
+       // vid = 0x1618 pid = 0xf368 
+        <usb-device vendor-id="5656" product-id="62312"  />
+       // vid = 0x1618 pid = 0xa815 
+        <usb-device vendor-id="5656" product-id="43029"  />
+       // vid = 0x1618 pid = 0x5301 
+        <usb-device vendor-id="5656" product-id="21249"  />
+       // vid = 0x1618 pid = 0x1633 
+        <usb-device vendor-id="5656" product-id="5683"  />
+       // vid = 0x1618 pid = 0xc248 
+        <usb-device vendor-id="5656" product-id="49736"  />
+       // vid = 0x1618 pid = 0xc168 
+        <usb-device vendor-id="5656" product-id="49512"  />
+       // vid = 0x1618 pid = 0xc129 
+        <usb-device vendor-id="5656" product-id="49449"  />
+       // vid = 0x1618 pid = 0x9001 
+        <usb-device vendor-id="5656" product-id="36865"  />
+
+</resources>
