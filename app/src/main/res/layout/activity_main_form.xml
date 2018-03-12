@@ -124,7 +124,6 @@
              />
 
         <ImageView
-
             android:id="@+id/iv_preview"
             android:layout_width="80dp"
             android:layout_height="80dp" />

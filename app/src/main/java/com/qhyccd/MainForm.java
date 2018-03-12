@@ -229,20 +229,19 @@ public class MainForm extends AppCompatActivity {
             public void getXy(float x, float y) {
                 Log.i("》》》 x == ", x + "");
                 Log.i("》》》》 y == ", y + "");
-
-
-                float x1 = 711 * x / widthScreen;
-                float y1 = 557 * y / heightScreen;
-
-//                Log.i("》》》》 x1 == ", x1 + "");
-//                Log.i("》》》》 y1 == ", y1 + "");
-
-//                Log.i("》》》 bmp1  == ",""+ bmp1.getWidth());
-//                Bitmap map = Bitmap.createBitmap(bmp1,(int) x,(int) y,10,10);
-                Matrix matrix = new Matrix();
-                matrix.postScale(5f, 5f);
-                Bitmap map = Bitmap.createBitmap(((BitmapDrawable) ((ImageView) iv).getDrawable()).getBitmap(), (int) x-10,(int) y-10, 20, 20,matrix , true);
-                ivPre.setImageBitmap(map);
+                Bitmap sourceBmp = ((BitmapDrawable) (iv).getDrawable()).getBitmap();
+                if (x + 10 > sourceBmp.getWidth()) {
+                    x = sourceBmp.getWidth() - 10;
+                } else if (x < 10) {
+                    x = 10;
+                }
+                if (y + 10 > sourceBmp.getHeight()) {
+                    y = sourceBmp.getHeight() - 10;
+                } else if (y < 10) {
+                    y = 10;
+                }
+                Bitmap bmp = Bitmap.createBitmap(sourceBmp, (int) x - 10, (int) y - 10, 20, 20);
+                ivPre.setImageBitmap(bmp);
             }
         });
 
@@ -256,7 +255,7 @@ public class MainForm extends AppCompatActivity {
             bmp1.recycle();
             bmp1 = null;
         }
-        if(cdt != null){
+        if (cdt != null) {
             cdt.cancel();
             cdt = null;
         }
