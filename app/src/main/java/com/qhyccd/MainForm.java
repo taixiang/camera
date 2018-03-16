@@ -1,5 +1,6 @@
 package com.qhyccd;
 
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.Matrix;
 import android.graphics.drawable.BitmapDrawable;
@@ -81,6 +82,14 @@ public class MainForm extends AppCompatActivity {
         BUTTON4 = (Button) findViewById(R.id.button4);
         BUTTON5 = (Button) findViewById(R.id.button5);
         ivPre = (ImageView) findViewById(R.id.iv_preview);
+
+        ivPre.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainForm.this, SecondActivity.class);
+                startActivity(intent);
+            }
+        });
 
 
         Globals.ImgDataX = new byte[5000 * 5000 * 3];
