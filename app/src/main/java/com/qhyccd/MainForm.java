@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.view.SurfaceView;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -25,6 +26,7 @@ public class MainForm extends AppCompatActivity {
     private Button BUTTON4;
     private Button BUTTON5;
     private ImageView ivPre;
+    private CustomSurface surfaceView;
 
     private boolean onDisplay = false;
     private boolean onButton = false;
@@ -38,7 +40,7 @@ public class MainForm extends AppCompatActivity {
     QhyFunc cQhyFunc = new QhyFunc();
 
     //we use a timer to display the image
-    CountDownTimer cdt = new CountDownTimer(1000000, 20) {
+    CountDownTimer cdt = new CountDownTimer(10000, 20) {
 
         public void onTick(long millisUntilFinished) {
 
@@ -60,6 +62,7 @@ public class MainForm extends AppCompatActivity {
             //bmp1.copyPixelsFromBuffer (Globals.ImgData);
             bmp1.setPixels(Globals.bmpdata, 0, Globals.PicWidth, 0, 0, Globals.PicWidth, Globals.PicHeight);
             iv.setImageBitmap(bmp1);
+//            surfaceView.setData(bmp1);
             onDisplay = false;
         }
 
@@ -82,6 +85,7 @@ public class MainForm extends AppCompatActivity {
         BUTTON4 = (Button) findViewById(R.id.button4);
         BUTTON5 = (Button) findViewById(R.id.button5);
         ivPre = (ImageView) findViewById(R.id.iv_preview);
+        surfaceView = findViewById(R.id.surface);
 
         ivPre.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -169,6 +173,7 @@ public class MainForm extends AppCompatActivity {
                                                onButton = true;
                                                if ((Globals.Operator == 2) || (Globals.Operator == 4)) {
                                                    cdt.start();
+                                                   surfaceView.setData(bmp1);
                                                    cQhyFunc.SetLiveParameter();
                                                    Globals.Operator = 3;
                                                }

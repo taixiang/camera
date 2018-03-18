@@ -125,8 +125,13 @@
 
         <ImageView
             android:id="@+id/iv_preview"
-            android:layout_width="80dp"
-            android:layout_height="80dp" />
+            android:layout_width="30dp"
+            android:layout_height="30dp" />
+
+        <com.qhyccd.CustomSurface
+            android:id="@+id/surface"
+            android:layout_width="match_parent"
+            android:layout_height="120dp" />
 
 
     </LinearLayout>
