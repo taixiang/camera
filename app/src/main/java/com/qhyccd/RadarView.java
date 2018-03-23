@@ -86,6 +86,7 @@ public class RadarView extends View {
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
         drawPolygon(canvas);
+        drawLines(canvas);
     }
 
     /**
@@ -118,4 +119,21 @@ public class RadarView extends View {
             canvas.drawPath(path, polygonPaint);
         }
     }
+
+    /**
+     * 画连线
+     */
+    private void drawLines(Canvas canvas) {
+        float r = radius / layerCount;
+        for (int i = 0; i < count; i++) {
+            //起始坐标 从中心开始的话 startx=centerX , startY=centerY
+            float startX = (float) (centerX + Math.sin(angle * i) * r);
+            float startY = (float) (centerY - Math.cos(angle * i) * r);
+            //末端坐标
+            float endX = (float) (centerX + Math.sin(angle * i) * radius);
+            float endY = (float) (centerY - Math.cos(angle * i) * radius);
+            canvas.drawLine(startX, startY, endX, endY, linePaint);
+        }
+    }
+
 }
