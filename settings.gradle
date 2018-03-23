@@ -1,1 +1,1 @@
-include ':app', ':qhylib'
+include ':app', ':qhylib', ':alipaySdk-20170922', ':lib'
