@@ -9,7 +9,7 @@
     <color name="radarPolygonColor">#000000</color>
     <color name="radarLineColor">#29a364</color>
     <color name="radarCircleColor">#ff0000</color>
-    <color name="radarTxtColor">#6affa1</color>
-    <color name="radarRegionColor">#554cff8e</color>
+    <color name="radarTxtColor">#222222</color>
+    <color name="radarRegionColor">#55737373</color>
 
 </resources>
