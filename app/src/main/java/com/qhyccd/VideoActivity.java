@@ -14,12 +14,18 @@ import android.widget.VideoView;
 
 import com.qhyccd.util.ImageLoader;
 import com.qhyccd.util.VideoViewListener;
+import com.shuyu.gsyvideoplayer.GSYVideoManager;
+import com.shuyu.gsyvideoplayer.model.VideoOptionModel;
 import com.shuyu.gsyvideoplayer.utils.GSYVideoType;
 import com.shuyu.gsyvideoplayer.video.StandardGSYVideoPlayer;
 import com.shuyu.gsyvideoplayer.video.base.GSYVideoPlayer;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Timer;
 import java.util.TimerTask;
+
+import tv.danmaku.ijk.media.player.IjkMediaPlayer;
 
 /**
  * @author tx
@@ -35,7 +41,7 @@ public class VideoActivity extends AppCompatActivity {
         @Override
         public void handleMessage(Message msg) {
             super.handleMessage(msg);
-            player.setUp("https://cms.bscwin.com/upload/201801/30/9f9d9ebc-6f67-4e09-9b14-d59849c5fdd2.mp4", true, "");
+            player.setUp("https://cms.bscwin.com/upload/201803/19/756a7bef-6513-487b-ae9d-c5d7dae644b3.mp4", true, "");
             player.startPlayLogic();
             player.setVisibility(View.VISIBLE);
             iv.setVisibility(View.GONE);
@@ -51,7 +57,17 @@ public class VideoActivity extends AppCompatActivity {
 
 
         GSYVideoType.setShowType(GSYVideoType.SCREEN_TYPE_DEFAULT);
-        player.setUp("https://cms.bscwin.com/upload/201801/30/9f9d9ebc-6f67-4e09-9b14-d59849c5fdd2.mp4", true, "");
+
+        GSYVideoType.enableMediaCodec();
+        GSYVideoType.enableMediaCodecTexture();
+
+        VideoOptionModel videoOptionModel =
+                new VideoOptionModel(IjkMediaPlayer.OPT_CATEGORY_PLAYER, "framedrop", 27);
+        List<VideoOptionModel> list = new ArrayList<>();
+        list.add(videoOptionModel);
+        GSYVideoManager.instance().setOptionModelList(list);
+
+        player.setUp("https://cms.bscwin.com/upload/201803/19/756a7bef-6513-487b-ae9d-c5d7dae644b3.mp4", true, "");
         player.startPlayLogic();
         timer = new Timer();
         player.setStandardVideoAllCallBack(new VideoViewListener() {
