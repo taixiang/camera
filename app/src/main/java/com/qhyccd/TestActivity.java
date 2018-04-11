@@ -13,14 +13,17 @@ import android.support.v7.app.AppCompatActivity;
 
 public class TestActivity extends AppCompatActivity {
 
-    public static void actTest(AppCompatActivity appCompatActivity) {
-        Intent intent = new Intent(appCompatActivity, TestActivity.class);
-        appCompatActivity.startActivity(intent);
-    }
+    private RadarView radarView;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_test);
+        radarView = findViewById(R.id.radar_view);
+//        radarView.setCount(6);
+//        radarView.setLayerCount(6);
+
     }
+
+
 }
