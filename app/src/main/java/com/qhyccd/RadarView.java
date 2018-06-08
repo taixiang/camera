@@ -10,11 +10,6 @@ import android.support.v4.content.ContextCompat;
 import android.util.AttributeSet;
 import android.view.View;
 
-/**
- * @author tx
- * @date 2018/3/23
- */
-
 public class RadarView extends View {
 
     private int count = 5; //几边形
@@ -29,7 +24,7 @@ public class RadarView extends View {
     private Paint circlePaint; //圆点paint
     private Paint regionColorPaint; //覆盖区域paint
     private Double[] percents = {0.91, 0.35, 0.12, 0.8, 0.5}; //覆盖区域百分比
-    private String[] titles = {"dota", "斗地主", "大吉大利，晚上吃鸡", "炉石传说", "跳一跳"};//文字
+    private String[] titles = {"收益性", "生产性", "流动性", "安全性", "成长性"};//文字
     ;
 
     public RadarView(Context context) {
@@ -136,36 +131,6 @@ public class RadarView extends View {
         }
     }
 
-
-    private void drawPolygon2(Canvas canvas) {
-        Path path = new Path();
-        float r = radius / layerCount;
-        for (int i = 1; i <= layerCount; i++) {
-            float curR = r * i; //当前所在层的半径
-            for (int j = 0; j < count; j++) {
-                if (j == 0) {
-                    path.moveTo(centerX + curR, centerY);
-                } else {
-                    //顺时针记录其余顶角的点坐标
-                    float x = (float) (centerX + curR * Math.cos(angle * j));
-                    float y = (float) (centerY + curR * Math.sin(angle * j));
-                    path.lineTo(x, y);
-                }
-            }
-            //最外层的顶角外面的五个小圆点(图中红色部分)
-            if (i == layerCount) {
-                for (int j = 0; j < count; j++) {
-                    float x = (float) (centerX + Math.cos(angle * j) * (curR + 12));
-                    float y = (float) (centerY - Math.sin(angle * j) * (curR + 12));
-                    canvas.drawCircle(x, y, 4, circlePaint);
-                }
-            }
-            path.close();
-            canvas.drawPath(path, polygonPaint);
-        }
-    }
-
-
     /**
      * 画连线
      */
@@ -243,4 +208,19 @@ public class RadarView extends View {
         canvas.drawPath(path, regionColorPaint);
     }
 
+    /**
+     * 设置百分比
+     */
+    public void setPercents(Double[] percents) {
+        this.percents = percents;
+        invalidate();
+    }
+
+    /**
+     * 设置文字
+     */
+    public void setTitles(String[] titles) {
+        this.titles = titles;
+        invalidate();
+    }
 }

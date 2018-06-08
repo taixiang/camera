@@ -19,6 +19,8 @@ buildscript {
 allprojects {
     repositories {
         jcenter()
+        mavenCentral()
+
         maven {
             url 'https://maven.google.com/'
             name 'Google'
@@ -29,4 +31,22 @@ allprojects {
 
 task clean(type: Delete) {
     delete rootProject.buildDir
+}
+ext {
+    // Sdk and tools
+    compileSdkVersion = 25
+    buildToolsVersion = '25.0.3'
+    minSdkVersion = 15
+    targetSdkVersion = 25
+    versionCode = 4101
+    versionName = '4.1.1'
+
+    // App dependencies
+    supportVersion = '25.3.1'
+    walleVersion = '1.0.4'
+    loggerVersion = '2.1.1'
+    butterknifeVersion = '8.6.0'
+    daggerVersion = '2.5'
+    retrofitVersion = '2.3.0'
+
 }

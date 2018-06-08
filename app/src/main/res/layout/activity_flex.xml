@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/flexLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/flexDirection"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/border"
+        android:gravity="center"
+        android:onClick="onClick"
+        android:padding="10dp"
+        android:text="flexDirection" />
+
+    <TextView
+        android:id="@+id/flexWrap"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/border"
+        android:gravity="center"
+        android:onClick="onClick"
+        android:padding="10dp"
+        android:text="flexWrap" />
+
+    <TextView
+        android:id="@+id/justifyContent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/border"
+        android:gravity="center"
+        android:onClick="onClick"
+        android:padding="10dp"
+        android:text="justifyContent" />
+
+    <TextView
+        android:id="@+id/alignItems"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/border"
+        android:gravity="center"
+        android:onClick="onClick"
+        android:padding="10dp"
+        android:text="alignItems" />
+
+    <TextView
+        android:id="@+id/alignContent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/border"
+        android:gravity="center"
+        android:onClick="onClick"
+        android:padding="10dp"
+        android:text="alignContent" />
+
+</LinearLayout>
+
+

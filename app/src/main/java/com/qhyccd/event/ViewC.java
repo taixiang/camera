@@ -14,8 +14,6 @@ import android.widget.LinearLayout;
  */
 public class ViewC extends View {
 
-    private int lastX;
-    private int lastY;
 
     public ViewC(Context context) {
         super(context);
@@ -35,15 +33,13 @@ public class ViewC extends View {
         return super.dispatchTouchEvent(event);
     }
 
+    private int lastX;
+    private int lastY;
+
     @Override
     public boolean onTouchEvent(MotionEvent event) {
-        Log.i("》》》", " ViewC onTouchEvent  ");
-
         int x = (int) event.getX();
         int y = (int) event.getY();
-
-        Log.i("》》》", " ViewC onTouchEvent  x=="+x+"  y=="+y);
-
         switch (event.getAction()) {
             case MotionEvent.ACTION_DOWN:
                 lastX = x;
@@ -53,14 +49,12 @@ public class ViewC extends View {
                 //计算移动的距离
                 int offsetX = x - lastX;
                 int offsetY = y - lastY;
-
                 int l = getLeft() + offsetX;
                 int b = getBottom() + offsetY;
                 int r = getRight() + offsetX;
                 int t = getTop() + offsetY;
                 //重新确认位置
                 layout(l, t, r, b);
-
                 break;
             case MotionEvent.ACTION_UP:
                 LinearLayout.LayoutParams params = (LinearLayout.LayoutParams) getLayoutParams();
@@ -71,6 +65,4 @@ public class ViewC extends View {
         }
         return true;
     }
-
-
 }

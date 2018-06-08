@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#3F51B5</color>
-    <color name="colorPrimaryDark">#303F9F</color>
-    <color name="colorAccent">#FF4081</color>
+    <!--<color name="colorPrimary">#3F51B5</color>-->
+    <!--<color name="colorPrimaryDark">#303F9F</color>-->
+    <!--<color name="colorAccent">#FF4081</color>-->
     <color name="colorBlack">#000000</color>
     <color name="colorRed">#ff0000</color>
     <color name="colorYellow">#ffff00</color>
@@ -13,5 +13,54 @@
     <color name="radarCircleColor">#ff0000</color>
     <color name="radarTxtColor">#222222</color>
     <color name="radarRegionColor">#55737373</color>
+
+    <!--标题栏的颜色-->
+    <color name="colorPrimary">#808080</color>
+    <!--状态栏的颜色-->
+    <color name="colorPrimaryDark">#808080</color>
+
+    <!--控件的选中颜色，即checked或selected状态的颜色。-->
+    <color name="colorAccent">@android:color/transparent</color>
+
+
+    <color name="app_default_background_color">#f0f0f0</color>
+    <color name="app_default_split_line_color">#F5F3F1</color>
+    <color name="app_theme_color">#FA565F</color>
+    <color name="app_nav_color">@color/white</color>
+
+    <color name="white">#FFFFFF</color>
+    <color name="black">#333333</color>
+
+    <color name="color_hex_333333">#333333</color>
+    <color name="color_hex_555555">#555555</color>
+    <color name="color_hex_777777">#777777</color>
+    <color name="color_hex_999999">@color/text_99</color>
+    <color name="color_hex_aaaaaa">#AAAAAA</color>
+
+
+    <color name="transparent_pressed">#22000000</color>
+    <color name="transparent">#00000000</color>
+    <color name="system_bar_color_white">@color/white</color>
+    <color name="system_bar_color_red">@color/app_theme_color</color>
+    <color name="text">#333333</color>
+
+    <color name="mine_not_login_background">#90000000</color>
+    <color name="text_gray">@color/text_99</color>
+    <color name="bg">@color/bg_gray_f0</color>
+    <color name="divider_color">#333333</color>
+    <color name="text_99">#999999</color>
+    <color name="text_66">#666666</color>
+    <color name="text_33">#333333</color>
+    <color name="text_55">#555555</color>
+    <color name="bg_gray_cc">#CCCCCC</color>
+    <color name="bg_gray_f0">#F0F0F0</color>
+    <color name="text_white">@color/white</color>
+
+    <!--红包颜色-->
+    <color name="text_54545">#B54545</color>
+    <color name="text_666">#666666</color>
+
+
+    <color name="navigationBar_right_text_color">#ff4850</color>
 
 </resources>

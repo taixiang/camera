@@ -1,5 +1,4 @@
 apply plugin: 'com.android.application'
-
 android {
     compileSdkVersion 26
     buildToolsVersion "26.0.2"
@@ -10,12 +9,26 @@ android {
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        multiDexEnabled true
+        ndk {
+            //选择要添加的对应cpu类型的.so库。
+            abiFilters 'armeabi', 'x86'
+        }
+        javaCompileOptions {
+            // 显式声明支持注解
+            annotationProcessorOptions {
+                includeCompileClasspath false
+            }
+        }
     }
     buildTypes {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
+    }
+    packagingOptions {
+        exclude 'META-INF/services/javax.annotation.processing.Processor'
     }
 }
 
@@ -33,5 +46,26 @@ dependencies {
     compile "com.github.bumptech.glide:glide:3.7.0"
 
     compile 'github.hellocsl:GalleryLayoutManager:1.0.6'
+    compile 'org.xutils:xutils:3.5.0'
+    compile 'org.glassfish:javax.annotation:10.0-b28'
+    compile "com.google.dagger:dagger:$rootProject.ext.daggerVersion"
+    provided "com.google.dagger:dagger-compiler:$rootProject.ext.daggerVersion"
+
+//retrofit2 + okhttp + gson
+    compile "com.squareup.retrofit2:retrofit:$rootProject.ext.retrofitVersion"
+    compile 'com.squareup.okhttp3:logging-interceptor:3.3.0'
+    compile 'com.squareup.retrofit2:converter-gson:2.3.0'
+
+//转换器，请求结果转换成Model
+    compile 'com.squareup.retrofit2:adapter-rxjava2:2.3.0'
+
+//配合Rxjava 使用
+
+//rxjava、rxAndroid
+    compile 'io.reactivex.rxjava2:rxjava:2.1.1'
+    compile 'io.reactivex.rxjava2:rxandroid:2.0.1'
+    compile 'com.android.support:multidex:1.0.1'
+
+    compile 'com.google.android:flexbox:1.0.0'
 
 }
