@@ -48,6 +48,7 @@
         <activity android:name=".flex.LayoutFlexShrinkActivity" />
         <activity android:name=".flex.LayoutAlignSelfActivity" />
         <activity android:name=".flex.LayoutFlexBasisPercentActivity" />
+        <activity android:name=".flex.FlexRecyclerActivity" />
         <!--<activity android:name=".beis.AnimActivity" />-->
         <!--<activity android:name=".event.EventAct" />-->
     </application>

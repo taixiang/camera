@@ -46,6 +46,34 @@ public class FlexActivity extends Activity implements View.OnClickListener {
                 Intent intent5 = new Intent(this, AlignContentActivity.class);
                 startActivity(intent5);
                 break;
+            case R.id.divider:
+                Intent intent6 = new Intent(this, DividerActivity.class);
+                startActivity(intent6);
+                break;
+            case R.id.layout_order:
+                Intent intent7 = new Intent(this, LayoutOrderActivity.class);
+                startActivity(intent7);
+                break;
+            case R.id.layout_flexGrow:
+                Intent intent8 = new Intent(this, LayoutFlexGrowActivity.class);
+                startActivity(intent8);
+                break;
+            case R.id.layout_flexShrink:
+                Intent intent9 = new Intent(this, LayoutFlexShrinkActivity.class);
+                startActivity(intent9);
+                break;
+            case R.id.layout_alignSelf:
+                Intent intent10 = new Intent(this, LayoutAlignSelfActivity.class);
+                startActivity(intent10);
+                break;
+            case R.id.layout_flexBasisPercent:
+                Intent intent11 = new Intent(this, LayoutFlexBasisPercentActivity.class);
+                startActivity(intent11);
+                break;
+            case R.id.recycler:
+                Intent intent12 = new Intent(this, FlexRecyclerActivity.class);
+                startActivity(intent12);
+                break;
             default:
                 break;
         }
