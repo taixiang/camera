@@ -15,7 +15,7 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".flex.FlexActivity" >
+        <activity android:name=".drag.DragActivity" >
 
             <!--<intent-filter>-->
                 <!--<action android:name="android.hardware.usb.action.USB_DEVICE_ATTACHED" />-->
@@ -49,6 +49,7 @@
         <activity android:name=".flex.LayoutAlignSelfActivity" />
         <activity android:name=".flex.LayoutFlexBasisPercentActivity" />
         <activity android:name=".flex.FlexRecyclerActivity" />
+        <!--<activity android:name=".drag.DragActivity" />-->
         <!--<activity android:name=".beis.AnimActivity" />-->
         <!--<activity android:name=".event.EventAct" />-->
     </application>
