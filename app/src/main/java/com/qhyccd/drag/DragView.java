@@ -46,10 +46,7 @@ public class DragView extends View {
 
     private void init() {
         paint = new Paint();
-        paint.setColor(Color.RED);
-        paint.setAntiAlias(true);
-        paint.setStyle(Paint.Style.STROKE);
-        paint.setStrokeWidth(2f);
+
         initScreenW_H();
     }
 
@@ -70,35 +67,45 @@ public class DragView extends View {
     @Override
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
-
+        paint.setColor(Color.RED);
+//        paint.setAntiAlias(true);
+        paint.setStyle(Paint.Style.STROKE);
+        paint.setStrokeWidth(4.0f);
         canvas.drawRect(0, 0, getWidth(), getHeight(), paint);
+
+        
     }
 
 
     @Override
     public boolean onTouchEvent(MotionEvent event) {
-        int x = (int) event.getX();
-        int y = (int) event.getY();
 
         switch (event.getAction()) {
             case MotionEvent.ACTION_DOWN:
-                lastX = x;
-                lastY = y;
+                lastX = (int) event.getRawX();
+                lastY = (int) event.getRawY();
                 leftD = getLeft();
                 topD = getTop();
                 rightD = getRight();
                 bottomD = getBottom();
 
-                dragDirection = getDirection(x, y);
+                dragDirection = getDirection((int) event.getX(), (int) event.getY());
+                if(dragDirection == 9999){
+                    Log.i("》》》》》  ","11111========");
+                    return false;
+                }
                 break;
             case MotionEvent.ACTION_MOVE:
+                if(dragDirection == 9999){
+                    Log.i("》》》》》  ","222222========");
+                    return false;
+                }
                 //计算移动的距离
-                int offsetX = x - lastX;
-                int offsetY = y - lastY;
+                int offsetX = (int) event.getRawX() - lastX;
+                int offsetY = (int) event.getRawY() - lastY;
                 switch (dragDirection) {
                     case LEFT:
-                        Log.i("》》》》  ", "》》》 x=== " + x + "   lastX=====" + lastX + " offsetX=== " + offsetX);
-                        leftD = getLeft() + offsetX;
+                        leftD = leftD + offsetX;
                         if (leftD < 150) {
                             leftD = 150;
                         }
@@ -107,8 +114,7 @@ public class DragView extends View {
                         }
                         break;
                     case RIGHT:
-                        Log.i("》》》》  ", "》》》 x=== " + x + "   lastX=====" + lastX + " offsetX=== " + offsetX);
-                        rightD = getRight() + offsetX;
+                        rightD = rightD + offsetX;
                         if (rightD >= screenWidth) {
                             rightD = screenWidth - 150;
                         }
@@ -120,9 +126,12 @@ public class DragView extends View {
 //                leftD = getLeft() + offsetX;
 //                rightD = getRight() + offsetX;
 
+
+
                 Log.i("》》》》》 ", "leftD === " + leftD + " topD== " + topD + "" + " rightD == " + rightD + " bottomD == " + bottomD);
                 layout(leftD, topD, rightD, bottomD);
-
+                lastX = (int) event.getRawX();
+                lastY = (int) event.getRawY();
 //                int b = getBottom() + offsetY;
 //                int r = getRight() + offsetX;
 //                int t = getTop() + offsetY;
@@ -132,8 +141,12 @@ public class DragView extends View {
                 break;
         }
 
-
+        invalidate();
         return true;
+    }
+
+    public void invali(){
+        invalidate();
     }
 
     private int getDirection(int x, int y) {

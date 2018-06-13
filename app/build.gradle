@@ -67,5 +67,6 @@ dependencies {
     compile 'com.android.support:multidex:1.0.1'
 
     compile 'com.google.android:flexbox:1.0.0'
+    compile 'com.github.Almeros:android-gesture-detectors:v1.0'
 
 }
