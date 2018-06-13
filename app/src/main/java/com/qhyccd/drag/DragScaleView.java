@@ -137,6 +137,8 @@ public class DragScaleView extends View implements View.OnTouchListener {
                         right(v, dx);
                         top(v, dy);
                         break;
+                        default:
+                            break;
                 }
                 if (dragDirection != CENTER) {
                     v.layout(oriLeft, oriTop, oriRight, oriBottom);

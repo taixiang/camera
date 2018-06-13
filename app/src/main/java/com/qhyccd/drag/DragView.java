@@ -6,6 +6,7 @@ import android.graphics.Color;
 import android.graphics.Paint;
 import android.support.annotation.Nullable;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 
@@ -14,14 +15,20 @@ import android.view.View;
  */
 
 public class DragView extends View {
-
+    protected int screenWidth;
+    protected int screenHeight;
     private Paint paint;
     private int lastX;
     private int lastY;
-    private int centerX;
-    private int centerY;
 
-    private int LEFT = 0;
+    private int leftD;
+    private int topD;
+    private int rightD;
+    private int bottomD;
+
+    private int dragDirection;
+    private static final int LEFT = 0x10;
+    private static final int RIGHT = 0x11;
 
 
     public DragView(Context context) {
@@ -43,13 +50,20 @@ public class DragView extends View {
         paint.setAntiAlias(true);
         paint.setStyle(Paint.Style.STROKE);
         paint.setStrokeWidth(2f);
+        initScreenW_H();
+    }
+
+    /**
+     * 初始化获取屏幕宽高
+     */
+    protected void initScreenW_H() {
+        screenHeight = getResources().getDisplayMetrics().heightPixels - 40;
+        screenWidth = getResources().getDisplayMetrics().widthPixels;
     }
 
     @Override
     protected void onSizeChanged(int w, int h, int oldw, int oldh) {
         super.onSizeChanged(w, h, oldw, oldh);
-        centerX = w / 2;
-        centerY = h / 2;
 
     }
 
@@ -57,7 +71,7 @@ public class DragView extends View {
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
 
-        canvas.drawRect(centerX - 200, centerY - 200, centerX + 200, centerY + 200, paint);
+        canvas.drawRect(0, 0, getWidth(), getHeight(), paint);
     }
 
 
@@ -70,8 +84,48 @@ public class DragView extends View {
             case MotionEvent.ACTION_DOWN:
                 lastX = x;
                 lastY = y;
+                leftD = getLeft();
+                topD = getTop();
+                rightD = getRight();
+                bottomD = getBottom();
+
+                dragDirection = getDirection(x, y);
                 break;
             case MotionEvent.ACTION_MOVE:
+                //计算移动的距离
+                int offsetX = x - lastX;
+                int offsetY = y - lastY;
+                switch (dragDirection) {
+                    case LEFT:
+                        Log.i("》》》》  ", "》》》 x=== " + x + "   lastX=====" + lastX + " offsetX=== " + offsetX);
+                        leftD = getLeft() + offsetX;
+                        if (leftD < 150) {
+                            leftD = 150;
+                        }
+                        if (rightD - leftD < 300) {
+                            leftD = rightD - 300;
+                        }
+                        break;
+                    case RIGHT:
+                        Log.i("》》》》  ", "》》》 x=== " + x + "   lastX=====" + lastX + " offsetX=== " + offsetX);
+                        rightD = getRight() + offsetX;
+                        if (rightD >= screenWidth) {
+                            rightD = screenWidth - 150;
+                        }
+                        break;
+                    default:
+                        break;
+                }
+
+//                leftD = getLeft() + offsetX;
+//                rightD = getRight() + offsetX;
+
+                Log.i("》》》》》 ", "leftD === " + leftD + " topD== " + topD + "" + " rightD == " + rightD + " bottomD == " + bottomD);
+                layout(leftD, topD, rightD, bottomD);
+
+//                int b = getBottom() + offsetY;
+//                int r = getRight() + offsetX;
+//                int t = getTop() + offsetY;
 
                 break;
             default:
@@ -87,10 +141,16 @@ public class DragView extends View {
         int right = getRight();
         int top = getTop();
         int bottom = getBottom();
-        if (x >= left && x < left + 50 && y >= top+50 && y < bottom- 50) {
+        int width = getWidth();
+        int height = getHeight();
+
+        if (x <= 50 && y >= 50 && y <= bottom - top - 50) {
             return LEFT;
         }
-        return 0;
+        if (right - left - x <= 50 && y <= bottom - top - 50) {
+            return RIGHT;
+        }
+        return 9999;
     }
 
 }
