@@ -45,7 +45,7 @@ public class DragActivity extends Activity {
             mRotationDegrees = -detector.getRotationDegreesDelta()+mRotationDegrees;
             mRotationDegrees = mRotationDegrees % 360;
             view.setRotation(mRotationDegrees);
-            view.invali();
+//            view.invali();
             Log.i("》》》》》》  ", "onRotate: "+detector.getRotationDegreesDelta()+"----"+mRotationDegrees);
             return true;
         }

@@ -30,6 +30,9 @@ public class DragView extends View {
     private static final int LEFT = 0x10;
     private static final int RIGHT = 0x11;
 
+    private int centerX;
+    private int centerY;
+
 
     public DragView(Context context) {
         this(context, null);
@@ -61,7 +64,8 @@ public class DragView extends View {
     @Override
     protected void onSizeChanged(int w, int h, int oldw, int oldh) {
         super.onSizeChanged(w, h, oldw, oldh);
-
+        centerX = w/2;
+        centerY = h/2;
     }
 
     @Override
@@ -71,7 +75,10 @@ public class DragView extends View {
 //        paint.setAntiAlias(true);
         paint.setStyle(Paint.Style.STROKE);
         paint.setStrokeWidth(4.0f);
+//        canvas.rotate(45f,centerX,centerY);
         canvas.drawRect(0, 0, getWidth(), getHeight(), paint);
+
+//        canvas.restore();
 
         
     }
@@ -128,7 +135,8 @@ public class DragView extends View {
 
 
 
-                Log.i("》》》》》 ", "leftD === " + leftD + " topD== " + topD + "" + " rightD == " + rightD + " bottomD == " + bottomD);
+                Log.i("》》》》》 ", "leftD === " + leftD + " topD== " + topD + "" + " rightD == " + rightD + "   bottomD == " +   bottomD+"  width=="+getWidth()+"   height==="+getHeight());
+//                topD = topD -1;
                 layout(leftD, topD, rightD, bottomD);
                 lastX = (int) event.getRawX();
                 lastY = (int) event.getRawY();
@@ -141,7 +149,7 @@ public class DragView extends View {
                 break;
         }
 
-        invalidate();
+//        invalidate();
         return true;
     }
 
