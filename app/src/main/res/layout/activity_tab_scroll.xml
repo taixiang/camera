@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <android.support.design.widget.TabLayout
+        android:id="@+id/tablayout"
+        app:tabMode="scrollable"
+        app:tabSelectedTextColor="@color/radarLineColor"
+        app:tabIndicatorColor="@color/radarLineColor"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <com.qhyccd.tabscroll.CustomScrollView
+        android:id="@+id/scrollView"
+        android:fillViewport="true"
+        android:fitsSystemWindows="true"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:padding="16dp"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:text="便民生活"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:id="@+id/tv2"
+                android:layout_marginTop="200dp"
+                android:text="财富管理"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:layout_marginTop="200dp"
+                android:text="资金往来"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:layout_marginTop="200dp"
+                android:text="购物娱乐"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:layout_marginTop="200dp"
+                android:text="教育公益"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:layout_marginTop="200dp"
+                android:text="第三方服务"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+
+    </com.qhyccd.tabscroll.CustomScrollView>
+
+</LinearLayout>
