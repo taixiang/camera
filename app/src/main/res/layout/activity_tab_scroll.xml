@@ -1,66 +1,83 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
     <android.support.design.widget.TabLayout
         android:id="@+id/tablayout"
-        app:tabMode="scrollable"
-        app:tabSelectedTextColor="@color/radarLineColor"
-        app:tabIndicatorColor="@color/radarLineColor"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        app:tabIndicatorColor="@color/radarLineColor"
+        app:tabMode="scrollable"
+        app:tabSelectedTextColor="@color/radarLineColor" />
 
     <com.qhyccd.tabscroll.CustomScrollView
         android:id="@+id/scrollView"
-        android:fillViewport="true"
-        android:fitsSystemWindows="true"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        android:fitsSystemWindows="true">
 
         <LinearLayout
-            android:padding="16dp"
-            android:orientation="vertical"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
 
             <TextView
-                android:text="便民生活"
+                android:id="@+id/tv1"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:text="沙发" />
 
             <TextView
                 android:id="@+id/tv2"
-                android:layout_marginTop="200dp"
-                android:text="财富管理"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:layout_marginTop="200dp"
+                android:text="财富管理" />
 
             <TextView
-                android:layout_marginTop="200dp"
-                android:text="资金往来"
+                android:id="@+id/tv3"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:layout_marginTop="200dp"
+                android:text="资金往来" />
 
             <TextView
-                android:layout_marginTop="200dp"
-                android:text="购物娱乐"
+                android:id="@+id/tv4"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:layout_marginTop="200dp"
+                android:text="购物娱乐" />
 
             <TextView
-                android:layout_marginTop="200dp"
-                android:text="教育公益"
+                android:id="@+id/tv5"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:layout_marginTop="200dp"
+                android:text="教育公益" />
 
             <TextView
-                android:layout_marginTop="200dp"
-                android:text="第三方服务"
+                android:id="@+id/tv6"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:layout_marginTop="200dp"
+                android:text="第三方服务" />
+
+            <com.google.android.flexbox.FlexboxLayout
+                android:id="@+id/six_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="111" />
+
+            </com.google.android.flexbox.FlexboxLayout>
 
         </LinearLayout>
 
