@@ -13,22 +13,9 @@
         app:tabMode="scrollable"
         app:tabSelectedTextColor="@color/radarLineColor" />
 
-    <com.qhyccd.tabscroll.CustomScrollView
-        android:id="@+id/scrollView"
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recyclerView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:fillViewport="true"
-        android:fitsSystemWindows="true">
-
-        <LinearLayout
-            android:id="@+id/container"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:padding="16dp">
-
-        </LinearLayout>
-
-    </com.qhyccd.tabscroll.CustomScrollView>
+        android:layout_height="match_parent" />
 
 </LinearLayout>

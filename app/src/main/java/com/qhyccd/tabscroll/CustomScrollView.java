@@ -4,14 +4,9 @@ import android.content.Context;
 import android.util.AttributeSet;
 import android.widget.ScrollView;
 
-/**
- * @author tx
- * @date 2018/7/10
- */
 public class CustomScrollView extends ScrollView {
 
     public Callbacks mCallbacks;
-
 
     public CustomScrollView(Context context) {
         super(context);
@@ -32,7 +27,6 @@ public class CustomScrollView extends ScrollView {
     @Override
     protected void onScrollChanged(int l, int t, int oldl, int oldt) {
         super.onScrollChanged(l, t, oldl, oldt);
-
         if (mCallbacks != null) {
             mCallbacks.onScrollChanged(l, t, oldl, oldt);
         }
@@ -40,10 +34,6 @@ public class CustomScrollView extends ScrollView {
 
     public interface Callbacks {
         void onScrollChanged(int x, int y, int oldx, int oldy);
-
-        void onTouchUp();
-
-        void onTouchDown();
     }
 
 }
