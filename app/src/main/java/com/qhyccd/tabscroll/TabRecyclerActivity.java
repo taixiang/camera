@@ -57,15 +57,16 @@ public class TabRecyclerActivity extends Activity {
     }
 
     public static void moveToPosition(LinearLayoutManager manager, RecyclerView mRecyclerView, int n) {
-
-
         int firstItem = manager.findFirstVisibleItemPosition();
         int lastItem = manager.findLastVisibleItemPosition();
+        Log.i("》》》》  ", " first ==== " + firstItem + " last === " + lastItem);
+
         if (n <= firstItem) {
 //            mRecyclerView.scrollToPosition(n);
             mRecyclerView.smoothScrollToPosition(n);
         } else if (n <= lastItem) {
             int top = mRecyclerView.getChildAt(n - firstItem).getTop();
+            Log.i("》》》》  ", " top===== " + top);
             mRecyclerView.smoothScrollBy(0, top);
         } else {
             mRecyclerView.smoothScrollToPosition(n);
