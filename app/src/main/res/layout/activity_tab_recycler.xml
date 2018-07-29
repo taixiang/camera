@@ -8,7 +8,7 @@
     <android.support.design.widget.TabLayout
         android:id="@+id/tablayout"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="50dp"
         app:tabIndicatorColor="@color/radarLineColor"
         app:tabMode="scrollable"
         app:tabSelectedTextColor="@color/radarLineColor" />
