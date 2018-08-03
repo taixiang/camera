@@ -38,13 +38,13 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
         holder.anchorView.setContentTxt(tabTxt[position]);
         holder.anchorView.setAnchorTxt(tabTxt[position]);
         if(position == tabTxt.length - 1){
-//            Log.i("》》》》  ", " height ====  "+holder.anchorView.getHeight());
-//            Log.i("》》》》  ", " lastH ====  "+lastH);
-//            if (holder.anchorView.getHeight() < lastH) {
-//                LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
-//                params.height = lastH;
-//                holder.anchorView.setLayoutParams(params);
-//            }
+            Log.i("》》》》  ", " height ====  "+holder.anchorView.getHeight());
+            Log.i("》》》》  ", " lastH ====  "+lastH);
+            if (holder.anchorView.getHeight() < lastH) {
+                LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
+                params.height = lastH;
+                holder.anchorView.setLayoutParams(params);
+            }
         }
     }
 

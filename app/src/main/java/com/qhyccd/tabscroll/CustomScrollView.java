@@ -1,6 +1,7 @@
 package com.qhyccd.tabscroll;
 
 import android.content.Context;
+import android.support.v4.widget.NestedScrollView;
 import android.util.AttributeSet;
 import android.widget.ScrollView;
 
