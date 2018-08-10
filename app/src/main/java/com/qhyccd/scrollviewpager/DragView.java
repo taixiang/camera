@@ -1,14 +1,26 @@
 package com.qhyccd.scrollviewpager;
 
+import android.app.Activity;
 import android.content.Context;
 import android.support.annotation.Nullable;
 import android.support.constraint.ConstraintLayout;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentStatePagerAdapter;
+import android.support.v4.view.ViewPager;
+import android.support.v7.app.AppCompatActivity;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
+import android.view.View;
+import android.view.ViewGroup;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 
 import com.qhyccd.R;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * @author tx
@@ -27,6 +39,9 @@ public class DragView extends LinearLayout {
     private int scrollX;
     private int scrollY;
 
+    private ViewPager viewPager;
+    private List<TestFragment> list= new ArrayList<>();
+
     public DragView(Context context) {
         this(context, null);
     }
@@ -41,7 +56,9 @@ public class DragView extends LinearLayout {
     }
 
     private void init(Context context) {
-        LayoutInflater.from(context).inflate(R.layout.view_drag, this, true);
+        View view = LayoutInflater.from(context).inflate(R.layout.view_drag, this, true);
+        viewPager = view.findViewById(R.id.view_pager);
+
     }
 
 
@@ -53,7 +70,12 @@ public class DragView extends LinearLayout {
         this.parentHeight = parentHeight;
     }
 
-
+    public void setData(Context context,FragmentManager fm){
+        list.add(new TestFragment());
+        list.add(new TestFragment());
+        list.add(new TestFragment());
+        viewPager.setAdapter(new ScrollAdapter(fm));
+    }
 
     @Override
     public boolean onTouchEvent(MotionEvent event) {
@@ -99,11 +121,37 @@ public class DragView extends LinearLayout {
 //                dragInterface.getHeight(500);
 
                 break;
+            case MotionEvent.ACTION_UP:
+                RelativeLayout.LayoutParams params = (RelativeLayout.LayoutParams) getLayoutParams();
+                params.setMargins(getLeft(), getTop(), 0, 0);
+                break;
             default:
                 break;
         }
 
         return true;
+    }
+
+    private class ScrollAdapter extends FragmentStatePagerAdapter {
+
+        public ScrollAdapter(FragmentManager fm) {
+            super(fm);
+        }
+
+        @Override
+        public Fragment getItem(int position) {
+            return list.get(position);
+        }
+
+        @Override
+        public int getCount() {
+            return 3;
+        }
+
+        @Override
+        public void destroyItem(ViewGroup container, int position, Object object) {
+//            super.destroyItem(container, position, object);
+        }
     }
 
 }

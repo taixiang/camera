@@ -76,6 +76,7 @@ public class AnswerFragment extends Fragment {
                 dragView.setLayoutParams(params);
                 dragView.setParentWidth(width);
                 dragView.setParentHeight(height);
+                dragView.setData(getActivity(),getChildFragmentManager());
                 container.getViewTreeObserver().removeOnGlobalLayoutListener(this);
             }
         });
