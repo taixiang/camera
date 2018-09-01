@@ -1,5 +1,6 @@
 package com.qhyccd.screenshot;
 
+import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Color;
@@ -10,6 +11,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
@@ -28,7 +30,7 @@ public class ScreenshotActivity extends AppCompatActivity implements View.OnClic
     private Button btnCommon;
     private Button btnScroll;
     private Button btnInflate;
-    private RelativeLayout container;
+    private LinearLayout container;
     private LinearLayout part;
     private ScrollView scrollView;
 //    private LinearLayout remain;
@@ -53,7 +55,9 @@ public class ScreenshotActivity extends AppCompatActivity implements View.OnClic
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.btn_common:
-                createBitmap(container);
+//                createBitmap(container);
+                Bitmap bitmap = getBitmapByView(this,container);
+saveBitmap(bitmap);
                 break;
             case R.id.btn_scroll:
                 createBitmap2(part);
@@ -65,6 +69,38 @@ public class ScreenshotActivity extends AppCompatActivity implements View.OnClic
             default:
                 break;
         }
+    }
+
+    public Bitmap getBitmapByView(Context context, ViewGroup viewGroup) {
+        int h = 0;
+        Bitmap bitmap = null;
+        for (int i = 0; i < viewGroup.getChildCount(); i++) {
+            Log.i("》》》》 ","=======");
+            View view = viewGroup.getChildAt(i);
+            if(view instanceof ScrollView){
+                View v = ((ScrollView) view).getChildAt(0);
+                int height = v.getHeight();
+                h+=height;
+
+                int measuredWidth = View.MeasureSpec.makeMeasureSpec(v.getWidth(), View.MeasureSpec.EXACTLY);
+                int measuredHeight = View.MeasureSpec.makeMeasureSpec(v.getHeight(), View.MeasureSpec.EXACTLY);
+                v.measure(measuredWidth, measuredHeight);
+                Log.i("》》》》 ","======= h == "+h+"  height === "+height);
+            }else {
+                h += view.getHeight();
+            }
+
+        }
+
+
+
+        //创建对应大小的Bitmap
+        bitmap = Bitmap.createBitmap(getScreenWidth(), h, Bitmap.Config.ARGB_8888);
+        Canvas canvas = new Canvas(bitmap);
+        canvas.drawColor(Color.WHITE);
+        viewGroup.draw(canvas);
+
+        return bitmap;
     }
 
     public int getScreenHeight() {

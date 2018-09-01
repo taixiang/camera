@@ -1,36 +1,44 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
     android:orientation="vertical">
 
-    <Button
-        android:id="@+id/btn_common"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        android:text="普通截取"
-        android:textAllCaps="false" />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
-    <Button
-        android:id="@+id/btn_scroll"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        android:layout_toRightOf="@+id/btn_common"
-        android:text="scrollview截取"
-        android:textAllCaps="false" />
+        <Button
+            android:id="@+id/btn_common"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:text="普通截取"
+            android:textAllCaps="false" />
 
-    <Button
-        android:id="@+id/btn_inflate"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        android:layout_toRightOf="@+id/btn_scroll"
-        android:text="inflate截取"
-        android:textAllCaps="false" />
+        <Button
+            android:id="@+id/btn_scroll"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:layout_toRightOf="@+id/btn_common"
+            android:text="scrollview截取"
+            android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/btn_inflate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:layout_toRightOf="@+id/btn_scroll"
+            android:text="inflate截取"
+            android:textAllCaps="false" />
+
+    </RelativeLayout>
+
+
 
     <ScrollView
         android:id="@+id/scrollView"
@@ -100,4 +108,4 @@
     </ScrollView>
 
 
-</RelativeLayout>
+</LinearLayout>
