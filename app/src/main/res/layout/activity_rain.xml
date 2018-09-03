@@ -4,10 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/baselayout"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context="com.obike.widgets.MainActivity">
+    android:layout_height="match_parent">
 
-    <com.obike.widgets.ScreenRainView
+    <com.qhyccd.rain.ScreenRainView
         android:id="@+id/srvMain"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />

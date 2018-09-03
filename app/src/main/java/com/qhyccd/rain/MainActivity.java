@@ -4,14 +4,18 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
 import com.qhyccd.R;
 
+import java.util.Random;
+
 public class MainActivity extends AppCompatActivity {
     private ScreenRainView srvMain;
     private Button start;
+    private Random random = new Random();
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -28,7 +32,11 @@ public class MainActivity extends AppCompatActivity {
         srvMain.setRainAppearDuration(1500);
         srvMain.addRaindropImages(R.mipmap.pic_vip_bought_gift_orange,
                 R.mipmap.pic_vip_bought_gift_yellow);
-
+        float t = 80f/100f;
+        for(int i=0;i<10;i++){
+            int q = -random.nextInt(5);
+            Log.i("》》》》  ","t ========  "+ q);
+        }
 
     }
 
@@ -36,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
         if (v.getId() == R.id.start) {
             srvMain.start();
         } else {
-            Intent intent = new Intent(this, TestActivity.class);
+            Intent intent = new Intent(this, RainActivity.class);
             startActivity(intent);
         }
 
