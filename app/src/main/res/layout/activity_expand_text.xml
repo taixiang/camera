@@ -4,9 +4,28 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <com.qhyccd.expandTextView.ExpandTextView
-        android:id="@+id/expand"
-        android:layout_width="match_parent"
+    <Button
+        android:id="@+id/btn1"
+        android:text="set"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
+
+
+    <Button
+        android:id="@+id/btn2"
+        android:text="delete"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <com.scwang.smartrefresh.layout.SmartRefreshLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <com.qhyccd.expandTextView.ExpandTextView
+            android:id="@+id/expand"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </com.scwang.smartrefresh.layout.SmartRefreshLayout>
+
+
 
 </LinearLayout>
