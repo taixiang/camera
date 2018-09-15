@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.Button;
 
 import com.qhyccd.R;
+import com.qhyccd.expandTextView.ExpandTextActivity;
 
 import java.util.Random;
 
@@ -44,7 +45,7 @@ public class MainActivity extends AppCompatActivity {
         if (v.getId() == R.id.start) {
             srvMain.start();
         } else {
-            Intent intent = new Intent(this, RainActivity.class);
+            Intent intent = new Intent(this, ExpandTextActivity.class);
             startActivity(intent);
         }
 

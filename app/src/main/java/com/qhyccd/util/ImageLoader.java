@@ -23,7 +23,7 @@ public class ImageLoader {
      * @param iv 加载的imageView
      */
     public static void loadImage(Context context, String url, ImageView iv) {
-        Glide.with(context).load(url).dontAnimate().into(iv);
+        Glide.with(context).load(url).into(iv);
     }
 
     /**
@@ -33,7 +33,7 @@ public class ImageLoader {
      * @param iv
      */
     public static void loadImage(Context context, String url,int errorImg, ImageView iv) {
-        Glide.with(context).load(url).dontAnimate().error(errorImg).into(iv);
+//        Glide.with(context).load(url).error(errorImg).into(iv);
     }
 
     /**
@@ -45,7 +45,7 @@ public class ImageLoader {
      * @param iv 加载的imageView
      */
     public static void loadImage(Context context,String url,int erroImg,int emptyImg,ImageView iv){
-        Glide.with(context).load(url).dontAnimate().placeholder(emptyImg).error(erroImg).into(iv);
+//        Glide.with(context).load(url).dontAnimate().placeholder(emptyImg).error(erroImg).into(iv);
     }
 
     /**
@@ -55,9 +55,9 @@ public class ImageLoader {
      * @param iv 加载的imageView
      */
     public static void loadGifImage(Context context, String url, ImageView iv) {
-        Glide.with(context).load(url).
-                asGif().
-                diskCacheStrategy(DiskCacheStrategy.SOURCE).into(iv);
+//        Glide.with(context).load(url).
+//                asGif().
+//                diskCacheStrategy(DiskCacheStrategy.SOURCE).into(iv);
     }
 
     /**
@@ -77,6 +77,6 @@ public class ImageLoader {
      * @param imageView 加载的imageView
      */
     public static void loadImage(Context context, final int resourceId, final ImageView imageView) {
-        Glide.with(context).load(resourceId).dontAnimate().into(imageView);
+//        Glide.with(context).load(resourceId).dontAnimate().into(imageView);
     }
 }
