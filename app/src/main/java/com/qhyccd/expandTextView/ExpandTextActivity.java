@@ -6,8 +6,8 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
-import android.widget.ImageView;
-import android.widget.TextView;
+import android.view.View;
+import android.widget.Button;
 import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
@@ -36,6 +36,8 @@ import java.net.URL;
 
 import static com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions.withCrossFade;
 
+import cn.jpush.android.api.JPushInterface;
+
 /**
  * @author tx
  * @date 2018/9/4
@@ -46,28 +48,33 @@ public class ExpandTextActivity extends AppCompatActivity {
     private RequestBuilder<PictureDrawable> requestBuilder;
     private FlexibleRichTextView richTv;
 
+
+    private Button btn1;
+    private Button btn2;
+    private int s;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_expand_text);
-        AjLatexMath.init(this);
-        RichText.initCacheDir(this);
-        tv = findViewById(R.id.html_text);
-        iv = findViewById(R.id.iv);
-        richTv = findViewById(R.id.rich_tv);
+        btn1= findViewById(R.id.btn1);
+        btn2 = findViewById(R.id.btn2);
 
-        String ww = "\"<p><span>二元函数 <img style=\"width:auto;height:auto ;\" src=\"http://equation.kaoyanvip.cn/?tex=z%20%3D%20xy(3-x-y)%20\" alt=\"z = xy(3-x-y) \" class=\"formula-tex\"></span>的极值点是</p>\"";
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                s++;
+                JPushInterface.setAlias(ExpandTextActivity.this,s,"1111111");
+            }
+        });
 
-        RichText.fromHtml(ww)
-                .imageGetter(new MyImgGetter())
-                .into(tv);
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                s=1;
+                JPushInterface.deleteAlias(ExpandTextActivity.this,s);
+            }
+        });
 
-//        Glide.with(this).load("http://oss.kaoyanvip.cn/test/ZKDmMZ9nwpgvsVML9wVxpj.jpeg").into(iv);
-
-        requestBuilder = Glide.with(this)
-                .as(PictureDrawable.class)
-                .transition(withCrossFade())
-                .listener(new SvgSoftwareLayerSetter());
 
     }
 
