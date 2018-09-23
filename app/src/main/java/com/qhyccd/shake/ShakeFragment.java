@@ -86,7 +86,7 @@ public class ShakeFragment extends Fragment
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState)
     {
-        return inflater.inflate(R.layout.activity_shake,null);
+        return inflater.inflate(R.layout.fragment_shake,null);
     }
 
     @TargetApi(Build.VERSION_CODES.HONEYCOMB_MR1)

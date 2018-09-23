@@ -6,6 +6,8 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.webkit.WebView;
+import android.widget.TextView;
 
 import com.qhyccd.R;
 
@@ -15,9 +17,19 @@ import com.qhyccd.R;
  */
 public class TestFragment extends Fragment {
 
+    private WebView webView;
+
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_test, container, false);
+        View view = inflater.inflate(R.layout.fragment_test, container, false);
+        webView = view.findViewById(R.id.webView);
+        return view;
     }
+
+
+    public void setData(){
+        webView.loadUrl("http://www.kaoyanvip.cn/");
+    }
+
 }
