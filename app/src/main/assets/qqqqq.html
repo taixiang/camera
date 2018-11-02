@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="dsbridge.js"></script>
+</head>
+<body>
+
+<div id="test"></div>
+
+</body>
+</html>
+
+<script>
+
+    //接收android 题目内容
+    dsBridge.register('nativeToJs', function (data) {
+        console.log("》》》》》》》》》》  接收题目1111 ");
+        console.log(data)
+         var value = JSON.parse(data);
+        document.getElementById("test").innerHTML = value.html;
+        return "success"
+    });
+
+</script>
