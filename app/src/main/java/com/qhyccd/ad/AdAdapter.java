@@ -37,7 +37,7 @@ public class AdAdapter extends RecyclerView.Adapter<AdAdapter.Holder> {
 
     @Override
     public void onBindViewHolder(@NonNull Holder holder, int position) {
-        if(position>0 && position % 8 == 0){
+        if(position>0 && position  == 7){
             holder.linearLayout.setVisibility(View.GONE);
         }else {
             holder.linearLayout.setVisibility(View.VISIBLE);
