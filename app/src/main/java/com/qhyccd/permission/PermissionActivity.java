@@ -54,7 +54,11 @@ public class PermissionActivity extends AppCompatActivity implements EasyPermiss
         //权限判断，第一次弹出系统的授权提示框
         if (EasyPermissions.hasPermissions(this, perms)) {
             //有权限直接执行 todo...
+            Log.i("》》》》》  ","  requestPermission  requestPermission ");
+
+            takePhoto();
         }else {
+            Log.i("》》》》》  ","  requestPermission  requestPermission0000000 ");
             //没有权限的话，先提示，点确定后弹出系统的授权提示框
             EasyPermissions.requestPermissions(this, "拍照过程需要用到相机权限",
                     PERMISSIONS_REQUEST_CODE, perms);
@@ -84,31 +88,19 @@ public class PermissionActivity extends AppCompatActivity implements EasyPermiss
     }
 
     /**
-     * 请求权限成功。
-     * 可以弹窗显示结果，也可执行具体需要的逻辑操作
-     *
-     * @param requestCode
-     * @param perms
+     * 允许权限成功后触发
      */
     @Override
     public void onPermissionsGranted(int requestCode, List<String> perms) {
-     //   ToastUtils.showToast(getApplicationContext(), "用户授权成功");
     }
+
     /**
-     * 请求权限失败
-     *
-     * @param requestCode
-     * @param perms
+     * 禁止权限后触发
      */
     @Override
     public void onPermissionsDenied(int requestCode, List<String> perms) {
-     //   ToastUtils.showToast(getApplicationContext(), "用户授权失败");
-        /**
-         * 若是在权限弹窗中，用户勾选了'NEVER ASK AGAIN.'或者'不在提示'，且拒绝权限。
-         * 这时候，需要跳转到设置界面去，让用户手动开启。
-         */
         if (EasyPermissions.somePermissionPermanentlyDenied(this, perms)) {
-            new AppSettingsDialog.Builder(this).build().show();
+            //在权限弹窗中，用户勾选了'不在提示'且拒绝权限的情况触发，可以进行相关提示。
         }
     }
 
